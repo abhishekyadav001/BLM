@@ -15,7 +15,7 @@ const generateToken = (res, userId) => {
   });
 };
 
-// @desc Register a new user
+//  Register a new user
 exports.registerUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -37,7 +37,7 @@ exports.registerUser = async (req, res, next) => {
   }
 };
 
-// @desc Login user
+//  Login user
 exports.loginUser = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -58,7 +58,7 @@ exports.loginUser = async (req, res, next) => {
   }
 };
 
-// @desc Logout user
+//  Logout user
 exports.logoutUser = (req, res) => {
   res.cookie("jwt", "", {
     httpOnly: true,
@@ -67,7 +67,7 @@ exports.logoutUser = (req, res) => {
   res.status(200).json({ message: "Logged out successfully" });
 };
 
-// @desc Get current user
+//  Get current user
 exports.getCurrentUser = async (req, res) => {
   const user = await User.findById(req.user._id).select("-password");
   res.status(200).json(user);
