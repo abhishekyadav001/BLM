@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return (
+  return (  
     <>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <AppRoutes />
     </>
   );
 }
