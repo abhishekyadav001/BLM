@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Axios instance with cookie support
 export const api = axios.create({
-  baseURL: process.env.VITE_REACT_APP_API,
+  baseURL: import.meta.env.VITE_REACT_APP_API,
   headers: { "Content-Type": "application/json" },
   withCredentials: true, // <--- Important!
 });
